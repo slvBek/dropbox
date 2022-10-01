@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
-function App() {
+import Dropbox from './components/Dropbox'
+import SignIn from './components/Auth/SignIn'
+import SignUp from './components/Auth/SignUp'
+import NonEmptyFolder from './components/folder/NonEmptyFolder'
+import Landing from './components/Landing'
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <BrowserRouter>
+      <Routes>
+        <Route exact path="/" component={Landing} />
+        <Route path='/signin' component={SignIn} />
+        <Route path='/signup' component={SignUp} />
+        <Route path='/dropbox' component={Dropbox} />
+        <Route path='/folder/:id' component={NonEmptyFolder} />
+      </Routes>
+    </BrowserRouter>
+  )
 }
-
 export default App;
