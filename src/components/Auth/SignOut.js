@@ -1,5 +1,5 @@
-import React from 'react'
-import { Redirect } from 'react-router-dom'
+import React, { Component } from 'react'
+import { Navigate } from 'react-router-dom'
 
 import { firebase } from '../../config/firebase'
 
@@ -20,7 +20,7 @@ class SignOut extends Component {
     render() {
         if(this.state.signedOut) {
             return (
-                <Redirect
+                <Navigate
                 to={{
                     pathname: '/signin',
                 }}

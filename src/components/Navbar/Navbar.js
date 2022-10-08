@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react';
 import SignOut from '../Auth/SignOut'
 
 class Navbar extends Component {

@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { Redirect } from 'react-router-dom'
+import { Navigate } from 'react-router-dom'
 
 class Breadcrumb extends Component {
     state = {
@@ -28,7 +28,7 @@ class Breadcrumb extends Component {
         const lis = this.createLi(breadcrumb.length, breadcrumb)
         if (this.state.home) {
             return (
-                <Redirect to={{ pathname: '/drive', state: { uid: this.props.id } }} />
+                <Navigate to={{ pathname: '/drive', state: { uid: this.props.id } }} />
             )
         }
         return (

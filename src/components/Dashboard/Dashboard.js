@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { Redirect } from 'react-router-dom'
+import { Navigate } from 'react-router-dom'
 
 import { recursiveTraversal, homePwd } from '../../store/actions/recursiveTraversalAction'
 import { currentPath, atHome } from '../../store/actions/currentPathAction'
@@ -114,7 +114,7 @@ class Dashboard extends Component {
         if(this.state.open) {
             const p = path.currentPath.path
             return (
-                <Redirect to={{ pathname: '/folder' + p }} />
+                <Navigate to={{ pathname: '/folder' + p }} />
             )
         }
         if (this.state.home) {

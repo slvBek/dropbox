@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Redirect } from 'react-router-dom'
+import { Navigate } from 'react-router-dom'
 import { connect } from 'react-redux'
 
 import { firebase } from '../../config/firebase'
@@ -45,7 +45,7 @@ class SignIn extends Component {
 
         if (this.state.isVerified) {
             return (
-                <Redirect
+                <Navigate
                 to={{
                     pathname: '/dropbox',
                     state: {
@@ -58,7 +58,7 @@ class SignIn extends Component {
 
         if(this.state.signup){
             return (
-                <Redirect to={{
+                <Navigate to={{
                     pathname: "/signup"
                 }} />
             )

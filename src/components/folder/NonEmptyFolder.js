@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { Redirect } from 'react-router-dom'
+import { Navigate } from 'react-router-dom'
 import SideBar from '../SideBar/SideBar'
 import FolderView from './FolderView'
 import FileView from '../file/FileView'
@@ -99,7 +99,7 @@ class NonEmptyFolder extends Component {
             const { path } = this.props
             const p = path.currentPath.path
             return (
-                <Redirect to={{ pathname: '/folder' + p }} />
+                <Navigate to={{ pathname: '/folder' + p }} />
             )
         }
         return (

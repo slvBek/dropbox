@@ -1,5 +1,5 @@
 import React from "react"
-import { Redirect } from "react-router-dom"
+import { Navigate } from "react-router-dom"
 
 class Landing extends React.Component {
 
@@ -9,7 +9,7 @@ class Landing extends React.Component {
 
         if(this.state.signup) {
             return(
-                <Redirect to={{
+                <Navigate to={{
                     pathname: "/signup"
                 }} />
             )
@@ -17,7 +17,7 @@ class Landing extends React.Component {
 
         if(this.state.signin) {
             return (
-                <Redirect to={{
+                <Navigate to={{
                     pathname: "/signin"
                 }} />
             )
