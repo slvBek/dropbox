@@ -1,18 +1,26 @@
-import firebase from "firebase/compat/app";
-import "firebase/compat/auth";
-import "firebase/compat/firestore";
-import "firebase/compat/storage";
+import firebase from 'firebase/compat/app'
+import 'firebase/compat/firestore'
+import 'firebase/compat/storage'
+import 'firebase/compat/auth'
 
-const firebaseConfig = {
-    apiKey: "AIzaSyAfCFS9Aozib2vTCRyuzDAOe32K9H7oBIY",
-    authDomain: "dropbox-3dd07.firebaseapp.com",
-    projectId: "dropbox-3dd07",
-    storageBucket: "dropbox-3dd07.appspot.com",
-    messagingSenderId: "362458055939",
-    appId: "1:362458055939:web:3799b0033c7c63bbf1d536"
-  };
-  
- 
-  const fire = firebase.initializeApp(firebaseConfig);
+const fbConfig = {
+  apiKey: "AIzaSyD_7NSxYZCjRYQW5k1XGwqdCCemAXylwuw",
+  authDomain: "dropbox-3c6ac.firebaseapp.com",
+  projectId: "dropbox-3c6ac",
+  storageBucket: "dropbox-3c6ac.appspot.com",
+  messagingSenderId: "322287900271",
+  appId: "1:322287900271:web:3c9ce20a1404127dc51f9a",
+  measurementId: "G-4TMPF302M6"
+};
 
-  export default fire;  
+firebase.initializeApp(fbConfig)
+var db = firebase.firestore()
+const storage  = firebase.storage()
+// const auth = firebase.auth()
+
+
+const rrfConfig = {
+  userProfile: 'users',
+  useFirestoreForProfile: true
+}
+export { firebase, db, storage }
