@@ -17,7 +17,7 @@ class SignIn extends Component {
 
     handleSubmit = e => {
         e.preventDefault()
-        firebase.auth().SignInWithEmailAndPassword(this.state.email, this.state.password)
+        firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
         .then(data => {
             const uid = data.user.uid
             const d = {
@@ -69,7 +69,7 @@ class SignIn extends Component {
               <div className="container">
                 <form className="mx-auto p-3 mt-5" style={{ maxWidth: "800", border: "2px solid #1DA1F2", borderRadius: "20px" }} onSubmit={this.handleSubmit}>
                   <div className="pb-2">
-                    <span><h2>Log in to Drive</h2></span>
+                    <span><h2>Log in to Dropbox</h2></span>
                   </div>
                   <div className="form-group mt-3 form-font">
                     <div className="bg-light rounded mt-3">
@@ -96,7 +96,7 @@ class SignIn extends Component {
                 <p className="mt-3">
                   Don't have an account?
                 </p>
-                <button class="btn btn-lg btn-primary border-0" style={{ backgroundColor: "#1DA1F2", borderRadius: "75px" }} onClick={event => this.setState({ signup: true })}>Sign Up</button>
+                <button className="btn btn-lg btn-primary border-0" style={{ backgroundColor: "#1DA1F2", borderRadius: "75px" }} onClick={event => this.setState({ signup: true })}>Sign Up</button>
               </div>
             </div>
           )
